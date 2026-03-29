@@ -17,7 +17,7 @@ export const Contact = () => {
                   </div>
                   <div>
                     <div className="text-base md:text-lg font-black text-primary mb-1">Email Us</div>
-                    <div className="text-sm md:text-base text-slate-600 font-medium">hello@gmartonline.com</div>
+                    <div className="text-sm md:text-base text-slate-600 font-medium">info@gmartonline.com</div>
                   </div>
                 </div>
                 <div className="flex items-start gap-5 md:gap-6">
@@ -26,7 +26,7 @@ export const Contact = () => {
                   </div>
                   <div>
                     <div className="text-base md:text-lg font-black text-primary mb-1">Call Us</div>
-                    <div className="text-sm md:text-base text-slate-600 font-medium">+94 11 234 5678</div>
+                    <div className="text-sm md:text-base text-slate-600 font-medium">+94 788809539</div>
                   </div>
                 </div>
                 <div className="flex items-start gap-5 md:gap-6">
@@ -35,7 +35,7 @@ export const Contact = () => {
                   </div>
                   <div>
                     <div className="text-base md:text-lg font-black text-primary mb-1">Visit Us</div>
-                    <div className="text-sm md:text-base text-slate-600 font-medium">Colombo, Sri Lanka</div>
+                    <div className="text-sm md:text-base text-slate-600 font-medium">No.6 Narahenpita Nawala road, Nawala, Sri Lanka.</div>
                   </div>
                 </div>
               </div>
@@ -48,7 +48,7 @@ export const Contact = () => {
                     <input
                       type="text"
                       className="w-full px-6 py-4 rounded-2xl border border-slate-200 focus:border-accent focus:ring-4 focus:ring-accent/10 outline-none transition-all font-medium text-sm md:text-base"
-                      placeholder="John Doe"
+                      placeholder="Enter name"
                     />
                   </div>
                   <div className="space-y-3">
@@ -56,7 +56,7 @@ export const Contact = () => {
                     <input
                       type="email"
                       className="w-full px-6 py-4 rounded-2xl border border-slate-200 focus:border-accent focus:ring-4 focus:ring-accent/10 outline-none transition-all font-medium text-sm md:text-base"
-                      placeholder="john@example.com"
+                      placeholder="Enter email"
                     />
                   </div>
                 </div>
