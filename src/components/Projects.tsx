@@ -6,7 +6,7 @@ import { cn } from '../utils/cn';
 export const Projects = () => {
   const [activeFilter, setActiveFilter] = useState('All');
 
-  const categories = ['All', 'Web Development', 'Mobile App', 'Game Development', 'Custom Software'];
+  const categories = ['All','Web Development' , 'SaaS Development', 'Mobile Game Development', 'App Development'];
 
   const projects = [
     {
@@ -29,7 +29,7 @@ export const Projects = () => {
     },
     {
       title: "Ludo-Arena Mobile Game",
-      category: "App Development",
+      category: "Mobile Game Development",
       image: "https://lgwrc9xwufcexfj4.public.blob.vercel-storage.com/Projects-images/project-04-ludoarena_mobile-game.png",
       desc: "Experience the ultimate multiplayer board game: a strategic, mind-refreshing classic to enjoy with friends and family anytime."
     }
