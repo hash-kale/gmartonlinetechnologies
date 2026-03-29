@@ -30,7 +30,7 @@ export const Hero = () => {
             <span className="text-gradient italic">great</span> tech!
           </h1>
           <p className="text-lg md:text-2xl text-slate-600 mb-10 md:mb-12 max-w-xl mx-auto lg:mx-0 leading-relaxed font-medium">
-            Mobile, Web Apps and Artificial Intelligence. We turn ideas into efficient digital products with a focus on quality and innovation.
+            We build powerful apps, websites, games, and custom systems to help you grow and succeed in the digital age.
           </p>
           <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 md:gap-6">
             <a
