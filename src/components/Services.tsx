@@ -44,27 +44,27 @@ export const Services = () => {
   ];
 
   return (
-    <section id="services" className="py-24">
+    <section id="services" className="section-padding">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <h2 className="text-sm font-bold text-accent uppercase tracking-widest mb-4">Our Expertise</h2>
-          <h3 className="text-4xl font-bold text-primary mb-6">Services We Offer</h3>
-          <p className="text-slate-600">
+        <div className="text-center max-w-3xl mx-auto mb-16 md:mb-20">
+          <h2 className="text-xs font-black text-accent uppercase tracking-[0.3em] mb-6">Our Expertise</h2>
+          <h3 className="text-4xl md:text-6xl font-black text-primary mb-8">Services We Offer</h3>
+          <p className="text-lg md:text-xl text-slate-600 leading-relaxed font-medium">
             We offer a wide range of custom software development services to cater to the unique needs of our clients.
           </p>
         </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10">
           {services.map((service, idx) => (
             <motion.div
               key={idx}
-              whileHover={{ y: -10 }}
-              className="p-8 rounded-3xl bg-white border border-slate-100 shadow-sm hover:shadow-xl transition-all"
+              whileHover={{ y: -12 }}
+              className="p-8 md:p-10 rounded-[2rem] md:rounded-[2.5rem] bg-white border border-slate-100 shadow-sm hover:shadow-2xl transition-all duration-500 group"
             >
-              <div className={cn("w-16 h-16 rounded-2xl flex items-center justify-center mb-6 shadow-sm", service.color)}>
-                {service.icon}
+              <div className={cn("w-16 h-16 md:w-20 md:h-20 rounded-2xl md:rounded-3xl flex items-center justify-center mb-8 md:mb-10 shadow-sm group-hover:scale-110 transition-transform duration-500", service.color)}>
+                <div className="scale-90 md:scale-100">{service.icon}</div>
               </div>
-              <h4 className="text-xl font-black text-primary mb-4 tracking-tight">{service.title}</h4>
-              <p className="text-slate-600 leading-relaxed font-medium">
+              <h4 className="text-xl md:text-2xl font-black text-primary mb-4 md:mb-6 tracking-tight">{service.title}</h4>
+              <p className="text-base md:text-lg text-slate-600 leading-relaxed font-medium">
                 {service.desc}
               </p>
             </motion.div>

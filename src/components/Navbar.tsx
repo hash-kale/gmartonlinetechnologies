@@ -15,49 +15,46 @@ export const Navbar = () => {
 
   const navLinks = [
     { name: 'Home', href: '#home' },
-    { name: 'Overview', href: '#overview' },
     { name: 'Services', href: '#services' },
     { name: 'Projects', href: '#projects' },
-    { name: 'Gallery', href: '#gallery' },
-    { name: 'Careers', href: '#careers' },
     { name: 'About', href: '#about' },
     { name: 'Contact', href: '#contact' },
   ];
 
   return (
     <nav className={cn(
-      "fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-6 py-4",
-      isScrolled ? "bg-white/80 backdrop-blur-md shadow-sm" : "bg-transparent"
+      "fixed top-0 left-0 right-0 z-50 transition-all duration-500 px-6 py-6",
+      isScrolled ? "bg-white/90 backdrop-blur-xl shadow-lg py-4" : "bg-transparent"
     )}>
       <div className="max-w-7xl mx-auto flex items-center justify-between">
-        <a href="#home" className="flex items-center gap-3 group">
-          <div className="w-10 h-10 bg-tech-gradient rounded-xl flex items-center justify-center text-white shadow-lg shadow-accent/20 group-hover:scale-110 transition-transform">
-            <Cpu className="w-6 h-6" />
+        <a href="#home" className="flex items-center gap-4 group">
+          <div className="w-12 h-12 bg-tech-gradient rounded-2xl flex items-center justify-center text-white shadow-xl shadow-accent/20 group-hover:scale-110 transition-all duration-500">
+            <Cpu className="w-7 h-7" />
           </div>
           <div className="flex flex-col">
-            <span className="font-bold text-lg tracking-tight text-primary leading-none">
+            <span className="font-black text-xl tracking-tighter text-primary leading-none">
               GMART ONLINE
             </span>
-            <span className="text-[10px] font-bold text-accent tracking-[0.2em] uppercase">
+            <span className="text-[11px] font-black text-accent tracking-[0.3em] uppercase mt-0.5">
               Technologies
             </span>
           </div>
         </a>
 
         {/* Desktop Nav */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-10">
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
-              className="text-sm font-medium text-slate-600 hover:text-accent transition-colors"
+              className="text-sm font-bold text-slate-500 hover:text-accent transition-all uppercase tracking-widest"
             >
               {link.name}
             </a>
           ))}
           <a
             href="#contact"
-            className="bg-tech-gradient text-white px-6 py-2.5 rounded-xl text-sm font-bold hover:shadow-lg hover:shadow-accent/30 transition-all active:scale-95"
+            className="bg-tech-gradient text-white px-8 py-3.5 rounded-2xl text-sm font-black uppercase tracking-widest hover:shadow-2xl hover:shadow-accent/40 transition-all active:scale-95"
           >
             Get in Touch
           </a>
@@ -65,10 +62,11 @@ export const Navbar = () => {
 
         {/* Mobile Toggle */}
         <button
-          className="md:hidden p-2 text-primary"
+          className="md:hidden p-3 -mr-3 text-primary hover:bg-slate-50 rounded-xl transition-colors"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          aria-label="Toggle menu"
         >
-          {isMobileMenuOpen ? <X /> : <Menu />}
+          {isMobileMenuOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
         </button>
       </div>
 
@@ -76,21 +74,30 @@ export const Navbar = () => {
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            className="absolute top-full left-0 right-0 bg-white shadow-xl p-6 md:hidden flex flex-col gap-4 border-t border-slate-100"
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            className="absolute top-full left-0 right-0 bg-white shadow-2xl md:hidden overflow-hidden border-t border-slate-100"
           >
-            {navLinks.map((link) => (
+            <div className="p-8 flex flex-col gap-2">
+              {navLinks.map((link) => (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="text-xl font-bold text-slate-600 hover:text-accent py-4 border-b border-slate-50 last:border-0 transition-colors"
+                >
+                  {link.name}
+                </a>
+              ))}
               <a
-                key={link.name}
-                href={link.href}
+                href="#contact"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="text-lg font-medium text-slate-600 hover:text-accent"
+                className="mt-6 bg-tech-gradient text-white py-5 rounded-2xl text-center font-black uppercase tracking-widest shadow-xl shadow-accent/20"
               >
-                {link.name}
+                Get in Touch
               </a>
-            ))}
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
